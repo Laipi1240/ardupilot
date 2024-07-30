@@ -20,7 +20,20 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     lsb-release \
     sudo \
     tzdata \
-    bash-completion
+    bash-completion \
+    python3-dev \
+    python3-opencv \
+    python3-wxgtk4.0 \
+    python3-pip \
+    python3-matplotlib \
+    python3-lxml \
+    python3-pygame
+
+RUN pip3 install \
+    PyYAML \
+    mavproxy --user
+
+RUN echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
 
 COPY Tools/environment_install/install-prereqs-ubuntu.sh /ardupilot/Tools/environment_install/
 COPY Tools/completion /ardupilot/Tools/completion/

@@ -1,0 +1,1 @@
+docker run --rm -it -v /home/$USER/ardupilot:/ardupilot ardupilot:latest bash
